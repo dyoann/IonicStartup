@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavParams, ViewController } from 'ionic-angular';
 import { BookAndCdService } from '../../services/bookAndCd.service';
+import { Book } from '../../models/Book';
 
 @Component({
   selector: 'page-lend-book',

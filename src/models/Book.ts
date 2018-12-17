@@ -2,7 +2,7 @@ export class Book {
  
  isLend: boolean;
  
- constructor(public string: name,  public string: author, public number: year){
+ constructor(public name: string,  public author: string, public year: number){
 	this.isLend = false; 
  }
 

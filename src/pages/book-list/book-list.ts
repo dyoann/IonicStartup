@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuController } from 'ionic-angular';
 import { BookAndCdService } from '../../services/bookAndCd.service';
-import { Book } from '../../models/CD';
+import { Book } from '../../models/Book';
 import { ModalController } from 'ionic-angular';
 import { LendBookPage } from '../lend-book/lend-book';
 

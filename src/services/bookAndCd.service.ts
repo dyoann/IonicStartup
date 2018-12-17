@@ -1,3 +1,6 @@
+import { Book } from '../models/Book';
+import { CD }   from '../models/CD';
+
 export class BookAndCdService {
 	
 	
