@@ -13,5 +13,11 @@
 
 
 <ion-content padding>
-Ceci  est une page générique pour les réglages de l'application
+<ion-card>
+    <ion-card-header>Données (firebase)</ion-card-header>
+	<ion-card-content>
+		<button ion-button block outline (click)="onSaveList()">Sauvegarder</button>
+		<button ion-button block outline (click)="onFetchList()">Charger</button>
+	</ion-card-content>
+  </ion-card>
 </ion-content>

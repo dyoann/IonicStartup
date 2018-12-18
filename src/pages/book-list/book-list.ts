@@ -5,6 +5,8 @@ import { Book } from '../../models/Book';
 import { ModalController } from 'ionic-angular';
 import { LendBookPage } from '../lend-book/lend-book';
 
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'page-book-list',
   templateUrl: 'book-list.html',
@@ -12,14 +14,23 @@ import { LendBookPage } from '../lend-book/lend-book';
 export class BookListPage {
  
   booksList : Book[];
+  booksSubscription: Subscription;
 
   constructor(private modalCtrl: ModalController,
               private bookAndCdService: BookAndCdService,
 			  private menuCtrl: MenuController
 			  ) {}
   
-  ionViewWillEnter() {
-     this.booksList = this.bookAndCdService.booksList.slice();
+  ngOnInit() {
+	this.booksSubscription = this.bookAndCdService.books$.subscribe(
+		(books : Book[]) => {
+			this.booksList = books;		
+		},
+		(error) => {
+			console.log(error);
+		}
+	);
+    this.bookAndCdService.emitBooks();
   }
   
   onToggleMenu() {

@@ -1,12 +1,12 @@
 page-lend-cd {
   .is-lend-on {
     ion-card-content, ion-card-header, ion-grid {
-      background-color: color($colors, secondary-light);
+      background-color: color($colors, danger-light);
     }
   }
   .is-lend-off {
     ion-card-content, ion-card-header, ion-grid {
-      background-color: color($colors, danger-light);
+      background-color: color($colors, secondary-light);
     }
   }
 }

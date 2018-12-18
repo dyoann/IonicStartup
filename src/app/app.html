@@ -6,14 +6,26 @@
   </ion-header>
   <ion-content>
     <ion-list>
-	<button ion-button icon-start (click)="onNavigate(tabsPage)">
-        <ion-icon name="book"></ion-icon>
-		<ion-icon name="disc"></ion-icon>
+	<button ion-item (click)="onNavigate(tabsPage)" *ngIf="isAuth">
+        <ion-icon icon-start  name="book"></ion-icon>
+		<ion-icon  icon-start name="disc"></ion-icon>
          Livres & Cds
       </button>
-      <button ion-button icon-start (click)="onNavigate(settingsPage)">
-        <ion-icon name="settings"></ion-icon>
-         Réglages
+      <button ion-item (click)="onNavigate(settingsPage)" *ngIf="isAuth">
+        <ion-icon icon-start name="settings"></ion-icon>
+         <label>Réglages</label>
+      </button>
+	  <button ion-item (click)="onNavigate(authPage, {mode: 'new'})" *ngIf="!isAuth">
+        <ion-icon icon-start name="person-add"></ion-icon>
+        Nouvel utilisateur
+      </button>
+      <button ion-item (click)="onNavigate(authPage, {mode: 'connect'})" *ngIf="!isAuth">
+        <ion-icon icon-start name="person"></ion-icon>
+        Connexion
+      </button>
+	  <button ion-item (click)="onDisconnect()" *ngIf="isAuth">
+        <ion-icon icon-start name="exit"></ion-icon>
+        Déconnexion
       </button>
     </ion-list>
   </ion-content>

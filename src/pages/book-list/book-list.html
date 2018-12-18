@@ -14,9 +14,10 @@
     <button ion-item
             icon-start
             *ngFor="let book of booksList; let i = index"
-			[color]="book.isLend ? 'secondary' : 'danger'"
+			[color]="book.isLend ? 'danger' : 'secondary'"
             (click)="onLoadBook(i)">
-      {{ book.name }}
+      <p *ngIf="book.owner">{{ book.name }}, emprunté par : {{ book.owner }} </p>
+	  <p *ngIf="!book.owner">{{ book.name }}</p>
     </button>
   </ion-list>
 </ion-content>

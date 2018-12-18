@@ -9,10 +9,12 @@
 
 <ion-content padding>
   <ion-card [ngClass]="{'is-lend-on': book.isLend, 'is-lend-off': !book.isLend}">
-    <ion-card-header>{{ book.name }}</ion-card-header>
+    <ion-card-header><h1>{{ book.name }}</h1></ion-card-header>
     <ion-card-content>
 		Ecrit par {{ book.author }} en {{ book.year }}
     </ion-card-content>
+	<ion-card-content>
+	<form [formGroup]="ownerForm">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -20,18 +22,27 @@
             ion-button
             full
             color="danger"
-            [disabled]="!book.isLend"
-            (click)="onToggleBook()">Prêter</button>
+            [disabled]="book.isLend || ownerForm.invalid"
+            (click)="saveOwner()">Prêter</button>
         </ion-col>
         <ion-col>
           <button
             ion-button
             full
             color="secondary"
-            [disabled]="book.isLend"
-            (click)="onToggleBook()">Rendre</button>
+            [disabled]="!book.isLend"
+            (click)="removeOwner()">Rendre</button>
         </ion-col>
       </ion-row>
+	  <ion-row>
+		<ion-col *ngIf="book.owner">Emprunté par {{ book.owner }}</ion-col>
+		<ion-col *ngIf="!book.owner">
+				<ion-label stacked>Nom de l'emprunter</ion-label>
+				<ion-input placeholder="Emprunteur" formControlName="owner"></ion-input>
+		</ion-col>
+	  </ion-row>
     </ion-grid>
+	</form>
+	</ion-card-content>
   </ion-card>
 </ion-content>

@@ -14,9 +14,10 @@
     <button ion-item
             icon-start
             *ngFor="let cd of cdsList; let i = index"
-			[color]="cd.isLend ? 'secondary' : 'danger'"
+			[color]="cd.isLend ? 'danger' : 'secondary'"
             (click)="onLoadCD(i)">
-      {{ cd.name }}
+      <p *ngIf="cd.owner">{{ cd.name }}, emprunté par : {{ cd.owner }} </p>
+	  <p *ngIf="!cd.owner">{{ cd.name }}</p>
     </button>
   </ion-list>
 </ion-content>

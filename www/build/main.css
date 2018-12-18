@@ -30527,17 +30527,17 @@ ion-navbar.toolbar {
 }
 
 page-lend-book .is-lend-on ion-card-content, page-lend-book .is-lend-on ion-card-header, page-lend-book .is-lend-on ion-grid {
-  background-color: #eeffee;
+  background-color: #ffeeee;
 }
 
 page-lend-book .is-lend-off ion-card-content, page-lend-book .is-lend-off ion-card-header, page-lend-book .is-lend-off ion-grid {
-  background-color: #ffeeee;
-}
-
-page-lend-cd .is-lend-on ion-card-content, page-lend-cd .is-lend-on ion-card-header, page-lend-cd .is-lend-on ion-grid {
   background-color: #eeffee;
 }
 
-page-lend-cd .is-lend-off ion-card-content, page-lend-cd .is-lend-off ion-card-header, page-lend-cd .is-lend-off ion-grid {
+page-lend-cd .is-lend-on ion-card-content, page-lend-cd .is-lend-on ion-card-header, page-lend-cd .is-lend-on ion-grid {
   background-color: #ffeeee;
+}
+
+page-lend-cd .is-lend-off ion-card-content, page-lend-cd .is-lend-off ion-card-header, page-lend-cd .is-lend-off ion-grid {
+  background-color: #eeffee;
 }

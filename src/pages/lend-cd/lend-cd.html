@@ -11,8 +11,10 @@
   <ion-card [ngClass]="{'is-lend-on': cd.isLend, 'is-lend-off': !cd.isLend}">
     <ion-card-header>{{ cd.name }}</ion-card-header>
     <ion-card-content>
-		Artiste {{ cd.author }}, composé en {{ cd.year }}
+		Ecrit par {{ cd.author }} en {{ cd.year }}
     </ion-card-content>
+	<ion-card-content>
+	<form [formGroup]="ownerForm">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -20,18 +22,27 @@
             ion-button
             full
             color="danger"
-            [disabled]="!cd.isLend"
-            (click)="onToggleBook()">Prêter</button>
+            [disabled]="cd.isLend || ownerForm.invalid"
+            (click)="saveOwner()">Prêter</button>
         </ion-col>
         <ion-col>
           <button
             ion-button
             full
             color="secondary"
-            [disabled]="cd.isLend"
-            (click)="onToggleBook()">Rendre</button>
+            [disabled]="!cd.isLend"
+            (click)="removeOwner()">Rendre</button>
         </ion-col>
       </ion-row>
+	  <ion-row>
+		<ion-col *ngIf="cd.owner">Emprunté par {{ cd.owner }}</ion-col>
+		<ion-col *ngIf="!cd.owner">
+				<ion-label>Nom de l'emprunter</ion-label>
+				<ion-input placeholder="Emprunteur" formControlName="owner"></ion-input>
+		</ion-col>
+	  </ion-row>
     </ion-grid>
+	</form>
+	</ion-card-content>
   </ion-card>
 </ion-content>
