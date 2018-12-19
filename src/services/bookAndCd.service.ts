@@ -113,7 +113,7 @@ export class BookAndCdService {
   
   //Local save CD
   saveCdsDataLocal(){
-	 this.storage.set('cds',this.booksList);
+	 this.storage.set('cds',this.cdsList);
   }
   
   //Local load CD
