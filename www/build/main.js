@@ -995,10 +995,9 @@ var BookAndCdService = /** @class */ (function () {
     };
     BookAndCdService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], BookAndCdService);
     return BookAndCdService;
-    var _a;
 }());
 
 //# sourceMappingURL=bookAndCd.service.js.map
